@@ -71,6 +71,7 @@ namespace WinEventListenerApp
             this.MainNotifyIcon.ContextMenu = this.MainContextMenu;
             new IndexTabInit(this).init();
             new FileWatchTabInit(this).init();
+            new KeyboardWatchTabInit(this).init();
             new ApiCenterCtlTabInit(this).init();
             // 默认不显示主窗口
             //this.showNotifyIcon();

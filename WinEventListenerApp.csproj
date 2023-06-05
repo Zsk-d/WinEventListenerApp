@@ -97,6 +97,7 @@
       <DependentUpon>IndexForm.cs</DependentUpon>
     </Compile>
     <Compile Include="init\ApiCenterCtlTabInit.cs" />
+    <Compile Include="init\KeyboardWatchTabInit.cs" />
     <Compile Include="init\FileWatchTabInit.cs" />
     <Compile Include="init\IndexTabInit.cs" />
     <Compile Include="Program.cs" />
