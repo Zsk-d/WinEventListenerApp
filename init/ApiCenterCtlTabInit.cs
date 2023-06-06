@@ -16,7 +16,7 @@ namespace WinEventListenerApp.init
     {
         private bool initing = false;
         // 配置信息
-        private static string TAB_CONFIG_NAME = "ApiCenterCtlTab";
+        public static string TAB_CONFIG_NAME = "ApiCenterCtlTab";
         private static string CONFIG_KEY_OPEN = "open";
         
 

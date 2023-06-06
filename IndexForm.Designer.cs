@@ -70,6 +70,19 @@
             this.apiCenterCtlitlePanel = new System.Windows.Forms.Panel();
             this.apiCenterCtlOpenSwitch = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.keyboradWatchTab = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.keyboardWatchSaveBtn = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.keyboardWatchUploadUrlLabel = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.keyboardWatchSwitchPanel = new System.Windows.Forms.Panel();
+            this.keyboardWatchSwitch = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.fileWatchTab = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -82,14 +95,6 @@
             this.fileWatchTitlePanel = new System.Windows.Forms.Panel();
             this.fileWatchOpenSwitch = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.keyboradWatchTab = new System.Windows.Forms.TabPage();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.keyboardWatchSaveBtn = new System.Windows.Forms.Button();
-            this.keyboardWatchSwitchPanel = new System.Windows.Forms.Panel();
-            this.keyboardWatchSwitch = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
             this.tabPanel.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.parentPanel.SuspendLayout();
@@ -108,16 +113,19 @@
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.apiCenterCtlitlePanel.SuspendLayout();
+            this.keyboradWatchTab.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.keyboardWatchSwitchPanel.SuspendLayout();
             this.fileWatchTab.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.fileWatchConfigPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.fileWatchTitlePanel.SuspendLayout();
-            this.keyboradWatchTab.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.keyboardWatchSwitchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainNotifyIcon
@@ -555,6 +563,152 @@
             this.label6.Text = "配置";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // keyboradWatchTab
+            // 
+            this.keyboradWatchTab.Controls.Add(this.panel8);
+            this.keyboradWatchTab.Location = new System.Drawing.Point(4, 25);
+            this.keyboradWatchTab.Name = "keyboradWatchTab";
+            this.keyboradWatchTab.Padding = new System.Windows.Forms.Padding(3);
+            this.keyboradWatchTab.Size = new System.Drawing.Size(432, 708);
+            this.keyboradWatchTab.TabIndex = 3;
+            this.keyboradWatchTab.Text = "键盘鼠标记录";
+            this.keyboradWatchTab.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.panel17);
+            this.panel8.Controls.Add(this.panel18);
+            this.panel8.Controls.Add(this.keyboardWatchSwitchPanel);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(426, 702);
+            this.panel8.TabIndex = 3;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.keyboardWatchSaveBtn);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 195);
+            this.panel17.Name = "panel17";
+            this.panel17.Padding = new System.Windows.Forms.Padding(10);
+            this.panel17.Size = new System.Drawing.Size(426, 70);
+            this.panel17.TabIndex = 11;
+            // 
+            // keyboardWatchSaveBtn
+            // 
+            this.keyboardWatchSaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyboardWatchSaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.keyboardWatchSaveBtn.Enabled = false;
+            this.keyboardWatchSaveBtn.Location = new System.Drawing.Point(10, 10);
+            this.keyboardWatchSaveBtn.Name = "keyboardWatchSaveBtn";
+            this.keyboardWatchSaveBtn.Size = new System.Drawing.Size(406, 50);
+            this.keyboardWatchSaveBtn.TabIndex = 0;
+            this.keyboardWatchSaveBtn.Text = "保存";
+            this.keyboardWatchSaveBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(0, 54);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(426, 141);
+            this.panel18.TabIndex = 9;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.panel20);
+            this.panel19.Controls.Add(this.label14);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(10);
+            this.panel19.Size = new System.Drawing.Size(426, 95);
+            this.panel19.TabIndex = 18;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.keyboardWatchUploadUrlLabel);
+            this.panel20.Controls.Add(this.label13);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(10, 25);
+            this.panel20.Name = "panel20";
+            this.panel20.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel20.Size = new System.Drawing.Size(406, 52);
+            this.panel20.TabIndex = 8;
+            // 
+            // keyboardWatchUploadUrlLabel
+            // 
+            this.keyboardWatchUploadUrlLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.keyboardWatchUploadUrlLabel.Location = new System.Drawing.Point(122, 10);
+            this.keyboardWatchUploadUrlLabel.Name = "keyboardWatchUploadUrlLabel";
+            this.keyboardWatchUploadUrlLabel.Size = new System.Drawing.Size(276, 25);
+            this.keyboardWatchUploadUrlLabel.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label13.Font = new System.Drawing.Font("宋体", 9F);
+            this.label13.Location = new System.Drawing.Point(0, 10);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.label13.Size = new System.Drawing.Size(122, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "·记录上传URL: ";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label14.Location = new System.Drawing.Point(10, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "参数设定";
+            // 
+            // keyboardWatchSwitchPanel
+            // 
+            this.keyboardWatchSwitchPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.keyboardWatchSwitchPanel.Controls.Add(this.keyboardWatchSwitch);
+            this.keyboardWatchSwitchPanel.Controls.Add(this.label12);
+            this.keyboardWatchSwitchPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyboardWatchSwitchPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.keyboardWatchSwitchPanel.Location = new System.Drawing.Point(0, 0);
+            this.keyboardWatchSwitchPanel.Name = "keyboardWatchSwitchPanel";
+            this.keyboardWatchSwitchPanel.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.keyboardWatchSwitchPanel.Size = new System.Drawing.Size(426, 54);
+            this.keyboardWatchSwitchPanel.TabIndex = 7;
+            // 
+            // keyboardWatchSwitch
+            // 
+            this.keyboardWatchSwitch.AutoSize = true;
+            this.keyboardWatchSwitch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.keyboardWatchSwitch.Location = new System.Drawing.Point(347, 0);
+            this.keyboardWatchSwitch.Name = "keyboardWatchSwitch";
+            this.keyboardWatchSwitch.Size = new System.Drawing.Size(59, 54);
+            this.keyboardWatchSwitch.TabIndex = 0;
+            this.keyboardWatchSwitch.Text = "启用";
+            this.keyboardWatchSwitch.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label12.Location = new System.Drawing.Point(7, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 24);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "配置";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fileWatchTab
             // 
             this.fileWatchTab.Controls.Add(this.panel5);
@@ -691,99 +845,6 @@
             this.label3.Text = "配置";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // keyboradWatchTab
-            // 
-            this.keyboradWatchTab.Controls.Add(this.panel8);
-            this.keyboradWatchTab.Location = new System.Drawing.Point(4, 25);
-            this.keyboradWatchTab.Name = "keyboradWatchTab";
-            this.keyboradWatchTab.Padding = new System.Windows.Forms.Padding(3);
-            this.keyboradWatchTab.Size = new System.Drawing.Size(432, 708);
-            this.keyboradWatchTab.TabIndex = 3;
-            this.keyboradWatchTab.Text = "键盘鼠标记录";
-            this.keyboradWatchTab.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.panel17);
-            this.panel8.Controls.Add(this.panel18);
-            this.panel8.Controls.Add(this.keyboardWatchSwitchPanel);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(426, 702);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.keyboardWatchSaveBtn);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 195);
-            this.panel17.Name = "panel17";
-            this.panel17.Padding = new System.Windows.Forms.Padding(10);
-            this.panel17.Size = new System.Drawing.Size(426, 70);
-            this.panel17.TabIndex = 11;
-            // 
-            // keyboardWatchSaveBtn
-            // 
-            this.keyboardWatchSaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.keyboardWatchSaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.keyboardWatchSaveBtn.Enabled = false;
-            this.keyboardWatchSaveBtn.Location = new System.Drawing.Point(10, 10);
-            this.keyboardWatchSaveBtn.Name = "keyboardWatchSaveBtn";
-            this.keyboardWatchSaveBtn.Size = new System.Drawing.Size(406, 50);
-            this.keyboardWatchSaveBtn.TabIndex = 0;
-            this.keyboardWatchSaveBtn.Text = "保存";
-            this.keyboardWatchSaveBtn.UseVisualStyleBackColor = true;
-            // 
-            // keyboardWatchSwitchPanel
-            // 
-            this.keyboardWatchSwitchPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.keyboardWatchSwitchPanel.Controls.Add(this.keyboardWatchSwitch);
-            this.keyboardWatchSwitchPanel.Controls.Add(this.label12);
-            this.keyboardWatchSwitchPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.keyboardWatchSwitchPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.keyboardWatchSwitchPanel.Location = new System.Drawing.Point(0, 0);
-            this.keyboardWatchSwitchPanel.Name = "keyboardWatchSwitchPanel";
-            this.keyboardWatchSwitchPanel.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.keyboardWatchSwitchPanel.Size = new System.Drawing.Size(426, 54);
-            this.keyboardWatchSwitchPanel.TabIndex = 7;
-            // 
-            // keyboardWatchSwitch
-            // 
-            this.keyboardWatchSwitch.AutoSize = true;
-            this.keyboardWatchSwitch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.keyboardWatchSwitch.Location = new System.Drawing.Point(347, 0);
-            this.keyboardWatchSwitch.Name = "keyboardWatchSwitch";
-            this.keyboardWatchSwitch.Size = new System.Drawing.Size(59, 54);
-            this.keyboardWatchSwitch.TabIndex = 0;
-            this.keyboardWatchSwitch.Text = "启用";
-            this.keyboardWatchSwitch.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label12.Location = new System.Drawing.Point(7, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 24);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "配置";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel18
-            // 
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(0, 54);
-            this.panel18.Name = "panel18";
-            this.panel18.Padding = new System.Windows.Forms.Padding(20);
-            this.panel18.Size = new System.Drawing.Size(426, 141);
-            this.panel18.TabIndex = 9;
-            // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -827,6 +888,16 @@
             this.panel14.PerformLayout();
             this.apiCenterCtlitlePanel.ResumeLayout(false);
             this.apiCenterCtlitlePanel.PerformLayout();
+            this.keyboradWatchTab.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.keyboardWatchSwitchPanel.ResumeLayout(false);
+            this.keyboardWatchSwitchPanel.PerformLayout();
             this.fileWatchTab.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -836,11 +907,6 @@
             this.panel10.PerformLayout();
             this.fileWatchTitlePanel.ResumeLayout(false);
             this.fileWatchTitlePanel.PerformLayout();
-            this.keyboradWatchTab.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.keyboardWatchSwitchPanel.ResumeLayout(false);
-            this.keyboardWatchSwitchPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -907,6 +973,11 @@
         public System.Windows.Forms.Panel keyboardWatchSwitchPanel;
         public System.Windows.Forms.CheckBox keyboardWatchSwitch;
         private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        public System.Windows.Forms.TextBox keyboardWatchUploadUrlLabel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 
