@@ -76,11 +76,18 @@ namespace WinEventListenerApp.init
                         data.his = ObjectUtil.ObjectToJson(this.keyPressCountMap);
                         Request.post(this.keypressCountUploadUrl, data);
                     }
-                    Thread.Sleep(1000 * 60 * 5);
+                    try
+                    {
+                        Thread.Sleep(1000 * 60 * 5);
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        break;
+                    }
                 }
                 catch (Exception)
                 {
-                    break;
+                    Thread.Sleep(1000 * 60 * 1);
                 }
             }
         }
