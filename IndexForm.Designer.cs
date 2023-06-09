@@ -95,6 +95,9 @@
             this.fileWatchTitlePanel = new System.Windows.Forms.Panel();
             this.fileWatchOpenSwitch = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.mouseWatchUploadUrlLabel = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPanel.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.parentPanel.SuspendLayout();
@@ -126,6 +129,7 @@
             this.fileWatchConfigPanel.SuspendLayout();
             this.panel10.SuspendLayout();
             this.fileWatchTitlePanel.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainNotifyIcon
@@ -590,7 +594,7 @@
             // 
             this.panel17.Controls.Add(this.keyboardWatchSaveBtn);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 195);
+            this.panel17.Location = new System.Drawing.Point(0, 287);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(10);
             this.panel17.Size = new System.Drawing.Size(426, 70);
@@ -614,18 +618,19 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel18.Location = new System.Drawing.Point(0, 54);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(426, 141);
+            this.panel18.Size = new System.Drawing.Size(426, 233);
             this.panel18.TabIndex = 9;
             // 
             // panel19
             // 
+            this.panel19.Controls.Add(this.panel21);
             this.panel19.Controls.Add(this.panel20);
             this.panel19.Controls.Add(this.label14);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
             this.panel19.Padding = new System.Windows.Forms.Padding(10);
-            this.panel19.Size = new System.Drawing.Size(426, 95);
+            this.panel19.Size = new System.Drawing.Size(426, 188);
             this.panel19.TabIndex = 18;
             // 
             // panel20
@@ -642,9 +647,9 @@
             // keyboardWatchUploadUrlLabel
             // 
             this.keyboardWatchUploadUrlLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.keyboardWatchUploadUrlLabel.Location = new System.Drawing.Point(122, 10);
+            this.keyboardWatchUploadUrlLabel.Location = new System.Drawing.Point(152, 10);
             this.keyboardWatchUploadUrlLabel.Name = "keyboardWatchUploadUrlLabel";
-            this.keyboardWatchUploadUrlLabel.Size = new System.Drawing.Size(276, 25);
+            this.keyboardWatchUploadUrlLabel.Size = new System.Drawing.Size(244, 25);
             this.keyboardWatchUploadUrlLabel.TabIndex = 1;
             // 
             // label13
@@ -655,9 +660,9 @@
             this.label13.Location = new System.Drawing.Point(0, 10);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.label13.Size = new System.Drawing.Size(122, 25);
+            this.label13.Size = new System.Drawing.Size(152, 25);
             this.label13.TabIndex = 0;
-            this.label13.Text = "·记录上传URL: ";
+            this.label13.Text = "·键盘记录上传URL: ";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
@@ -845,6 +850,38 @@
             this.label3.Text = "配置";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.mouseWatchUploadUrlLabel);
+            this.panel21.Controls.Add(this.label11);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(10, 77);
+            this.panel21.Name = "panel21";
+            this.panel21.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel21.Size = new System.Drawing.Size(406, 52);
+            this.panel21.TabIndex = 9;
+            // 
+            // mouseWatchUploadUrlLabel
+            // 
+            this.mouseWatchUploadUrlLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mouseWatchUploadUrlLabel.Location = new System.Drawing.Point(152, 10);
+            this.mouseWatchUploadUrlLabel.Name = "mouseWatchUploadUrlLabel";
+            this.mouseWatchUploadUrlLabel.Size = new System.Drawing.Size(244, 25);
+            this.mouseWatchUploadUrlLabel.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("宋体", 9F);
+            this.label11.Location = new System.Drawing.Point(0, 10);
+            this.label11.Name = "label11";
+            this.label11.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.label11.Size = new System.Drawing.Size(152, 25);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "·鼠标记录上传URL: ";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -907,6 +944,8 @@
             this.panel10.PerformLayout();
             this.fileWatchTitlePanel.ResumeLayout(false);
             this.fileWatchTitlePanel.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -978,6 +1017,9 @@
         public System.Windows.Forms.TextBox keyboardWatchUploadUrlLabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel21;
+        public System.Windows.Forms.TextBox mouseWatchUploadUrlLabel;
+        private System.Windows.Forms.Label label11;
     }
 }
 

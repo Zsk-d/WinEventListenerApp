@@ -22,6 +22,7 @@ namespace WinEventListenerApp.init
         private static string TAB_CONFIG_NAME = "KeyBoardWatchTab";
         private static string CONFIG_KEY_OPEN = "open";
         private static string CONFIG_KEYPRESS_HIS_UPLOAD_URL = "keypressHisUploadUrl";
+        private static string CONFIG_MOUSEPRESS_HIS_UPLOAD_URL = "mouseHisUploadUrl";
 
         private static string KEY_PRESS_COUNT_MAP_PATH = FileUtil.getPjRootDir() + "\\keyboard-press-count.json";
 
@@ -29,11 +30,16 @@ namespace WinEventListenerApp.init
         private PjConfig.Config config = PjConfig.getConfig(TAB_CONFIG_NAME);
         private PjConfig.Config apiCenterConfig = PjConfig.getConfig(ApiCenterCtlTabInit.TAB_CONFIG_NAME);
         private Dictionary<string, object> keyPressCountMap;
+        private List<MousePressUploadData> mousePressUploadDataTmp;
 
-        private KeyboardHook keyboardHook = null;
+        private KeyboardMouseHook keyboardHook;
+        private MouseHook mouseHook;
         private int currentKeyPressCount = 0;
         private Thread autoSaveThread;
         private string keypressCountUploadUrl;
+        private string mousePressCountUploadUrl;
+
+        private string deviceName = "hwpc";
 
         public KeyboardWatchTabInit(IndexForm indexForm)
         {
@@ -47,6 +53,9 @@ namespace WinEventListenerApp.init
             this.initConfig();
             this.initMap();
             this.checkWatch(this.indexForm.keyboardWatchSwitch.Checked);
+            this.mousePressUploadDataTmp = new List<MousePressUploadData>();
+
+            this.deviceName = apiCenterConfig.get(ApiCenterCtlService.CONFIG_KEY_SELF_DEVICE_NAME, "hwpc").ToString();
         }
         
         private void initMap()
@@ -56,8 +65,11 @@ namespace WinEventListenerApp.init
         private void initConfig()
         {
             this.keypressCountUploadUrl = this.config.get(CONFIG_KEYPRESS_HIS_UPLOAD_URL, "http://localhost:8888/keyboardPressLog").ToString();
+            this.mousePressCountUploadUrl = this.config.get(CONFIG_MOUSEPRESS_HIS_UPLOAD_URL, "http://localhost:8888/mousePressLog").ToString();
             this.indexForm.keyboardWatchUploadUrlLabel.Text = keypressCountUploadUrl;
+            this.indexForm.mouseWatchUploadUrlLabel.Text = mousePressCountUploadUrl;
             this.indexForm.keyboardWatchUploadUrlLabel.TextChanged += Item_Changed;
+            this.indexForm.mouseWatchUploadUrlLabel.TextChanged += Item_Changed;
         }
 
         private void autoSave()
@@ -66,15 +78,22 @@ namespace WinEventListenerApp.init
             {
                 try
                 {
-                    if (this.currentKeyPressCount > 100)
+                    if (this.currentKeyPressCount > 200)
                     {
                         this.currentKeyPressCount = 0;
                         FileUtil.saveObjectJson(this.keyPressCountMap, KEY_PRESS_COUNT_MAP_PATH);
                         // 上传记录
                         KeypressHisUploadData data = new KeypressHisUploadData();
-                        data.deviceName = apiCenterConfig.get(ApiCenterCtlService.CONFIG_KEY_SELF_DEVICE_NAME,"hwpc").ToString();
+                        data.deviceName = this.deviceName;
                         data.his = ObjectUtil.ObjectToJson(this.keyPressCountMap);
                         Request.post(this.keypressCountUploadUrl, data);
+
+                        // 上传鼠标点击记录
+                        if (this.mousePressUploadDataTmp.Count > 0)
+                        {
+                            Request.post(this.mousePressCountUploadUrl, this.mousePressUploadDataTmp);
+                            this.mousePressUploadDataTmp.Clear();
+                        }
                     }
                     try
                     {
@@ -127,7 +146,7 @@ namespace WinEventListenerApp.init
             // 检查监听状态
             this.checkWatch(isOpen);
         }
-        private void OnKeyPress(KeyboardHook.HookStruct hookStruct, out bool handle)
+        private void OnKeyPress(KeyboardMouseHook.HookStruct hookStruct, out bool handle)
         {
             handle = false;
             string key = hookStruct.vkCode.ToString();
@@ -145,10 +164,13 @@ namespace WinEventListenerApp.init
             {
                 if (this.keyboardHook == null)
                 {
-                    this.keyboardHook = new KeyboardHook();
+                    this.keyboardHook = new KeyboardMouseHook();
                     this.keyboardHook.InstallHook(this.OnKeyPress);
                     this.autoSaveThread = new Thread(autoSave);
                     this.autoSaveThread.Start();
+
+                    mouseHook = new MouseHook();
+                    mouseHook.Subscribe(mouseKeyPressHandle);
                 }
             }
             else
@@ -159,8 +181,37 @@ namespace WinEventListenerApp.init
                     this.keyboardHook = null;
                     this.autoSaveThread.Interrupt();
                     this.autoSaveThread = null;
+
+                    mouseHook.Unsubscribe();
+                    mouseHook = null;
                 }
             }
+        }
+
+        private void mouseKeyPressHandle(MouseButtons button, int x, int y)
+        {
+            //Console.WriteLine("MouseDown: \t{0}; \t X: \t{1} Y: \t{2}", button, x, y);
+            string key = null;
+            if (button == MouseButtons.Left)
+            {
+                key = "l";
+            }
+            else if (button == MouseButtons.Right)
+            {
+                key = "r";
+            }
+            else if (button == MouseButtons.Middle)
+            {
+                key = "m";
+            }
+            if (key != null && !this.keyPressCountMap.ContainsKey(key))
+            {
+                this.keyPressCountMap.Add(key, 0);
+            }
+            this.keyPressCountMap[key] = Convert.ToDouble(this.keyPressCountMap[key]) + 0.5;
+            this.currentKeyPressCount ++;
+
+            this.mousePressUploadDataTmp.Add(new MousePressUploadData() { key = key,x = x,y = y, deviceName = this.deviceName });
         }
 
 
@@ -179,5 +230,13 @@ namespace WinEventListenerApp.init
     {
         public string deviceName;
         public string his;
+    }
+
+    internal struct MousePressUploadData
+    {
+        public string deviceName;
+        public string key;
+        public int x;
+        public int y;
     }
 }
