@@ -135,11 +135,13 @@ namespace WinEventListenerApp.init
         {
             bool isOpen = this.indexForm.keyboardWatchSwitch.Checked;
             this.keypressCountUploadUrl = this.indexForm.keyboardWatchUploadUrlLabel.Text;
+            this.mousePressCountUploadUrl = this.indexForm.mouseWatchUploadUrlLabel.Text;
             // 批量保存配置
             Dictionary<string, object> newConfig = new Dictionary<string, object>
             {
                 { CONFIG_KEY_OPEN, isOpen},
-                { CONFIG_KEYPRESS_HIS_UPLOAD_URL, keypressCountUploadUrl }
+                { CONFIG_KEYPRESS_HIS_UPLOAD_URL, keypressCountUploadUrl },
+                { CONFIG_MOUSEPRESS_HIS_UPLOAD_URL, mousePressCountUploadUrl }
             };
             this.config.set(newConfig);
             this.setSaveBtnEnable(false);
