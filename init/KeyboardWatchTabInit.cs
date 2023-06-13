@@ -206,6 +206,14 @@ namespace WinEventListenerApp.init
             {
                 key = "m";
             }
+            else if (button == MouseButtons.XButton1)
+            {
+                key = "p";
+            }
+            else if (button == MouseButtons.XButton2)
+            {
+                key = "n";
+            }
             if (key != null && !this.keyPressCountMap.ContainsKey(key))
             {
                 this.keyPressCountMap.Add(key, 0);
